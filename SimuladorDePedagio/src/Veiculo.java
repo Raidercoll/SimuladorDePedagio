@@ -14,7 +14,6 @@ public class Veiculo {
 
     public static Veiculo gerarNovoVeiculo(){
         Veiculo v = new Veiculo(gerarPlaca(), gerarTipoVeiculo());
-
         return v;
     }    
 

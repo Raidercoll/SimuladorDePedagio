@@ -14,13 +14,15 @@ public class Cabine {
         if(tamanho == 0){
             this.inicio = v;
             this.fim= v;
+            tamanho++;
         }else{
             Veiculo aux = fim;
             fim = v;
             aux.proximo = fim;
             fim.anterior = aux;
+            tamanho++;
         }
-        tamanho ++;
+        
     }
 
     public Veiculo saiDaCabine(){

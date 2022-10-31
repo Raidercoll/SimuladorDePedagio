@@ -17,8 +17,9 @@ public class Atendimento {
     }
 
     public void removeCarro(){
-        Veiculo aux = cabine.saiDaCabine();
+        
         valorPago();
+        Veiculo aux = cabine.saiDaCabine();
         relatorioVeiculo(aux);
         tempoDeAtendimento();
     }
@@ -47,12 +48,12 @@ public class Atendimento {
     }
 
     public String toString() {
-        String aux = "veiculos {";
+        String aux = "Relatorio cabine {";
         for(int i = 0; i < relatorioVeiculo.size(); i ++){
-            aux = aux + "[ " + relatorioVeiculo.get(i) + "," +  tempoAtendimento.get(i) + "," +  valorPagoVeiculo.get(i) + " ]";
+            aux = aux + "[ " + relatorioVeiculo.get(i) + ", tempo de Atendimento: " +  tempoAtendimento.get(i) + "s , Valor Pago: " +  valorPagoVeiculo.get(i) + " ]";
         }
         aux += "}";
-        return aux + " Valor Total: " + valorTotal +"; \n";
+        return aux + " Valor Total Cabine: " + valorTotal +"; \n";
     }
 
 

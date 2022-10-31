@@ -35,20 +35,21 @@ public class App {
                 if(aux.getTamanho() == 0){
                     veiculoCabine(aux);
                 }else{
-                    atendimentos.get(i).removeCarro();
                     veiculoCabine(aux);
+                    atendimentos.get(i).removeCarro();
+                    
                 }
             }
             System.out.println("Atendimentos: "+atendimentos);
 
             System.out.println("cabines: " + pedagio);
             System.out.println("Digite 'y' para continuar: ");
-            String letra = sc.next();
-            if(letra.toLowerCase() != "y"){
-                break;
+            String letra = sc.next().toLowerCase();
+            if(letra == "y"){
+                System.out.println("letra é y");
             }
         } 
-        sc.close();
+
         
         /*
         while(true){
