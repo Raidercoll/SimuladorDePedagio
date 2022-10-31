@@ -30,41 +30,23 @@ public class App {
         // System.out.println(pedagio);
         
         while(true){
+            int x = 0;
             for(int i = 0; i < 5; i ++){
                 Cabine aux = pedagio.get(i);
+
+                veiculoCabine(aux);
+                System.out.println("cabines: " + aux);
+                
                 if(aux.getTamanho() == 0){
-                    veiculoCabine(aux);
+
                 }else{
-                    veiculoCabine(aux);
                     atendimentos.get(i).removeCarro();
-                    
                 }
             }
-            System.out.println("Atendimentos: "+atendimentos);
-
-            System.out.println("cabines: " + pedagio);
             System.out.println("Digite 'y' para continuar: ");
             String letra = sc.next().toLowerCase();
-            if(letra == "y"){
-                System.out.println("letra é y");
-            }
+
+            System.out.println("Atendimentos: "+atendimentos);
         } 
-
-        
-        /*
-        while(true){
-            for(Cabine cabine :pedagio){
-                Random random = new Random();
-                int chance  = random.nextInt(99);
-                if(chance >=50){
-                Veiculo v = Veiculo.gerarNovoVeiculo();
-                cabine.entraNaCabine(v);
-                }       
-            }
-
-            System.out.println("cabines: " + pedagio);
-            System.out.println("Digite 'y' para continuar: ");
-            String letra = sc.next();
-        }*/
     }
 }

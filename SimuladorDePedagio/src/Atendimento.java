@@ -7,6 +7,7 @@ public class Atendimento {
     private ArrayList<Integer> tempoAtendimento;
     private ArrayList<Double> valorPagoVeiculo;
     private double valorTotal;
+    private int tempoCarro;
 
     public Atendimento(Cabine cabine){
         relatorioVeiculo = new ArrayList<>();
@@ -14,20 +15,35 @@ public class Atendimento {
         valorPagoVeiculo = new ArrayList<>();
         this.cabine = cabine;
         this.valorTotal = 0f;
+        this.tempoCarro = 20;
     }
 
     public void removeCarro(){
+        Boolean condicao = tempoDeAtendimento();
+        if(condicao == false){
+            
+        }else{
+            valorPago();
+            Veiculo aux = cabine.saiDaCabine();
+            relatorioVeiculo(aux);
+        }
         
-        valorPago();
-        Veiculo aux = cabine.saiDaCabine();
-        relatorioVeiculo(aux);
-        tempoDeAtendimento();
+        
     }
 
-    public void tempoDeAtendimento(){
+    public Boolean tempoDeAtendimento(){
+        if(tempoCarro == 60){
+            tempoCarro = 0;
+        }
         Random random = new Random();
         int tempo  = random.nextInt(60);
-        tempoAtendimento.add(tempo);
+        if(tempo < tempoCarro){
+            tempoCarro += 20;
+            return false;
+        }else{
+            tempoAtendimento.add(tempo);
+            return true;
+        }
     }
 
     public void valorPago(){
